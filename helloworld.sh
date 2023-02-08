@@ -6,7 +6,11 @@
 # Purpose: Prints a string to the terminal
 
 # Main
-printf  "I am working perfectly\n"
+echo  "I am working perfectly"
+
+
+
+
 
 
 
