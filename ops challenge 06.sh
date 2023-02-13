@@ -57,27 +57,53 @@
 # fi
 
 
-#final draft
-echo "Search for file or directory"
-read type 
-if [ "$type" == "file" ]; then
-  echo "File name?"
-  read name
-  if [ -e "$name" ]; then
-    echo "File $name exists"
-  else
-    echo "File with $name doesn't exist, creating $name now..."
-    touch $name
-  fi
-elif [ "$type" == "directory" ]; then
-  echo "Directory name?"
-  read name
-  if [ -e "$name" ]; then
-    echo "Directory $name exists"
-  else
-    echo "Directory with $name doesn't exist, creating $name now..."
-    mkdir "$name"
-  fi
-fi
+#draft 2 *realized I didn't add an array
+# echo "Search for file or directory"
+# read type 
+# if [ "$type" == "file" ]; then
+#   echo "File name?"
+#   read name
+#   if [ -e "$name" ]; then
+#     echo "File $name exists"
+#   else
+#     echo "File with $name doesn't exist, creating $name now..."
+#     touch $name
+#   fi
+# elif [ "$type" == "directory" ]; then
+#   echo "Directory name?"
+#   read name
+#   if [ -e "$name" ]; then
+#     echo "Directory $name exists"
+#   else
+#     echo "Directory with $name doesn't exist, creating $name now..."
+#     mkdir "$name"
+#   fi
+# fi
 
+
+#Final Draft
+cont_var=1
+while [[ $cont_var -eq 1 ]]; do
+  types=("file" "directory")
+  echo "Search for file or directory"
+  read type 
+  if [[ "${types[@]}" =~ "$type" ]]; then
+    echo "${type^} name?"
+    read name
+    if [ -e "$name" ]; then
+      echo "${type^} $name exists"
+    else
+      echo "${type^} with $name doesn't exist, creating $name now..."
+      touch $name
+    if [ "$type" == "file" ]; then
+      touch "$name"
+  elif [ "$type" == "directory" ]; then
+  mkdir "$name"
+  fi
+  fi
+  cont_var=0
+  else
+  echo "Invalid type, please choose either file or directory"
+fi
+done
 # End
