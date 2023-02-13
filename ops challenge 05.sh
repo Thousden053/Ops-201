@@ -12,7 +12,7 @@
 while true; do
   echo "Enter PID: "
   read pid
-  if [ "$pid" == "q" ]; then # if q is input the loop is executed
+  if [ "$pid" == "a" ]; then # if "a" is input the loop is executed
     break
   fi
   kill $pid
