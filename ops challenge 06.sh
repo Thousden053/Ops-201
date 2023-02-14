@@ -81,29 +81,68 @@
 # fi
 
 
-#Final Draft
+#Draft 3 *After conversing with Ethan Brock he pointed out that my code would search for any file or directory because i used -e instead of using -f and -d
+# cont_var=1
+# while [[ $cont_var -eq 1 ]]; do
+#   types=("file" "directory")
+#   echo "Search for file or directory?"
+#   read type 
+#   if [[ "${types[@]}" =~ "$type" ]]; then
+#     if [ "$type" == "file"]
+#     echo "$type name?"
+#     read name
+#     if [ -f "$name" ]; then
+#       echo "$type $name exists"
+#     else
+#       echo "$type with $name doesn't exist, creating $name now..."
+#       touch $name
+   
+#   elif [ "$type" == "directory" ]; then
+#     echo "$type name?"
+#     read name
+#     if [ -d "$name" ]; then
+#       echo "$type $name exists"
+#     else
+#       echo "$type with $name doesn't exist, creating $name now..."
+#       mkdir "$name"
+#   fi
+#   fi
+#   cont_var=0
+#   else
+#   echo "Invalid type, please choose either file or directory"
+# fi
+# done
+
+# Final Draft
+
 cont_var=1
 while [[ $cont_var -eq 1 ]]; do
   types=("file" "directory")
-  echo "Search for file or directory"
+  echo "Search for file or directory?"
   read type 
   if [[ "${types[@]}" =~ "$type" ]]; then
-    echo "${type^} name?"
-    read name
-    if [ -e "$name" ]; then
-      echo "${type^} $name exists"
-    else
-      echo "${type^} with $name doesn't exist, creating $name now..."
-      touch $name
     if [ "$type" == "file" ]; then
-      touch "$name"
-  elif [ "$type" == "directory" ]; then
-  mkdir "$name"
-  fi
-  fi
-  cont_var=0
+      echo "$type name?"
+      read name
+      if [ -f "$name" ]; then
+        echo "$type $name exists"
+      else
+        echo "$type with $name doesn't exist, creating $name now..."
+        touch $name
+      fi
+    elif [ "$type" == "directory" ]; then
+      echo "$type name?"
+      read name
+      if [ -d "$name" ]; then
+        echo "$type $name exists"
+      else
+        echo "$type with $name doesn't exist, creating $name now..."
+        mkdir "$name"
+      fi
+    fi
+    cont_var=0
   else
-  echo "Invalid type, please choose either file or directory"
-fi
+    echo "Invalid type, please choose either file or directory"
+  fi
 done
 # End
