@@ -3,7 +3,7 @@
 # Script: Ops 201 Class 07 Ops Challenge Solution
 # Author: Tyler Housden
 # Date of latest revision: 02/14/2023
-# Purpose: Displays relevant hardware information
+# Purpose: Displays relevant hardware information. while omitting irrelevant information.
 
 
 # Main
