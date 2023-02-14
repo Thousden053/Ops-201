@@ -7,10 +7,15 @@
 
 
 # Main
+echo "Computer Name"
 lshw | grep "ubuntuserver1" 
+echo "CPU"
 lshw | grep -A 6 "*-cpu"
+echo "Memory"
 lshw | grep -A 3 "*-memory" 
+echo "display"
 lshw | grep -A 12 "*-display" | grep -v "logical name: " | grep -v "version: " 
-lshw | grep -A 16 "*-network"
+echo "network"
+lshw | grep -A 15 "*-network"
 
 # End
