@@ -5,7 +5,6 @@
 # Date of latest revision: 02/14/2023
 # Purpose: Displays relevant hardware information. while omitting irrelevant information.
 
-
 # Main
 echo "Computer Name"
 lshw | grep "ubuntuserver1" 
