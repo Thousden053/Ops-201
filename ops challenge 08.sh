@@ -4,7 +4,7 @@
 # Purpose: When saved in a .bat, creates a copy of all files in "My Project Files" and pastes them in "Backups"
 
 # Main
-robocopy C:\Users\j.thompson\Desktop\"My Project Files" C:\Users\j.thompson\Backups /s
+robocopy C:\Users\j.thompson\Desktop\"My Project Files" C:\Users\j.thompson\Backups /MIR
 
 pause
 # End
