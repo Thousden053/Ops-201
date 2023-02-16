@@ -20,7 +20,7 @@ Get-EventLog -LogName System -InstanceId 16
 Get-EventLog -LogName System -Newest 20
 
 # Displays the 500 most recent logged events while stopping the system from truncating the message
-Get-EventLog -LogName System -Newest 500 |Format-Table -wrap
+Get-EventLog -LogName System -Newest 500 | Format-Table -wrap
 
 
 # End
