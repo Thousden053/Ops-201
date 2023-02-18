@@ -23,6 +23,7 @@ $ie.Visible = $true
 #uses a for loops to open ten instances of ie and displays owasp website
 for ($i = 1; $i -le 10; $i++) {
     Start-Process iexplore.exe -ArgumentList "https://owasp.org/www-project-top-ten/"
+}
 
 #Closes all instances of internet explorer
 Get-Process iexplore | ForEach-Object { $_.CloseMainWindow() }
