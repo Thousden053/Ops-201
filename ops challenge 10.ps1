@@ -26,7 +26,7 @@ for ($i = 1; $i -le 10; $i++) {
 }
 
 #Closes all instances of internet explorer
-Get-Process iexplore | ForEach-Object { $_.CloseMainWindow() }
+Get-Process iexplore | Stop-Process -Name iexplore
 
 #Prints PID's and the name of the programs associated with each PID
 Get-Process | Select-Object Id, Name
