@@ -9,24 +9,29 @@
 echo -e "Please choose a command: \nwhois\ndig \nhost \nnslookup"
 read command
 
+echo "Please enter a file name:"
+read filetype
+
 # Prompt the user for a domain name
 echo "Please enter a domain name:"
 read domain
+
+
 
 # Run the chosen command with the user's input
 cont_var=1
 while [[ $cont_var -eq 1 ]]; do
 if [ "$command" = "whois" ]; then
-    whois $domain
+    whois $domain > $filetype
     cont_var=0
 elif [ "$command" = "dig" ]; then
-    dig $domain
+    dig $domain > $filetype
     cont_var=0
 elif [ "$command" = "host" ]; then
-    host $domain
+    host $domain > $filetype
     cont_var=0
 elif [ "$command" = "nslookup" ]; then
-    nslookup $domain
+    nslookup $domain > $filetype
     cont_var=0
 else
     echo "Invalid command. Please enter either 'whois','dig','host','nslookup'."
