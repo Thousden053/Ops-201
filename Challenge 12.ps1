@@ -13,5 +13,6 @@ function func {
 #This command searches for lines containing the text "IPv4 Address" and a pattern that matches the format of an IPv4 address. 
 # This command should output one or more lines with only the IPv4 address(es) found in the ipconfig output.
 func > network_report.txt
-Remove-Item network_report.txt
+pause #gives the user the option to view the document and then can press enter to continue the script.
+Remove-Item network_report.txt #removed the created .txt file
 # End
